@@ -1,0 +1,19 @@
+
+syntax = "proto3";
+
+
+message Empty
+{
+}
+
+message CurrencyInfo
+{
+  double PLNEUR = 1;
+  double PLNUSD = 2;
+  double PLNCHF = 3;
+}
+
+
+service CurrencyInfoStream {
+  rpc getCurrencyInfo(Empty) returns (stream CurrencyInfo) {}
+}
